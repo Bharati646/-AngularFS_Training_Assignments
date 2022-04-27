@@ -1,0 +1,12 @@
+<fieldset>
+  <h4>Product Information</h4>
+  ProductName:<input type="text" [(ngModel)]="pname" /><br /><br />
+
+  UnitPrice:<input type="text" [(ngModel)]="price" /><br /><br />
+
+  Quantity:<input type="text" [(ngModel)]="qty" /><br /><br />
+
+  <button type="button" (click)="login_click()">Get Output</button><br /><br />
+
+  <span [style]="color_style">Total Price : {{ result }}</span>
+</fieldset>
