@@ -1,0 +1,20 @@
+<style>
+  .c {
+    border: 1px solid gray;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+    float: left;
+    box-shadow: 5px 5px 5px gray;
+    align-items: center;
+  }
+</style>
+
+<div *ngFor="let item of filter" class="c">
+  <h3>Product Details</h3>
+  <p>Category :{{ item.Category }}</p>
+  <p>Product Name :{{ item.ProductName }}</p>
+  <p>Price :{{ item.price }}</p>
+  <p>Quantity :{{ item.Qty }}</p>
+</div>
