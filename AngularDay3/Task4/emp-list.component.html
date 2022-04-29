@@ -1,0 +1,37 @@
+<h3>Working with Services in Angular</h3>
+<hr />
+
+<input type="text" [(ngModel)]="empno" placeholder="Employee Number" />
+<input type="text" [(ngModel)]="ename" placeholder="Employee Name" />
+<input type="text" [(ngModel)]="job" placeholder="Job" />
+<input type="text" [(ngModel)]="sal" placeholder="Salary" />
+<input type="text" [(ngModel)]="deptno" placeholder="Department No." />
+<br />
+<br />
+<button (click)="getData_click()">Get Data</button>
+<button (click)="addEmployee_click()">Add Data</button>
+<button (click)="deleteEmployee_click()">Delete Data</button>
+<br /><br />
+<table width="500" cellspacing="0" cellpadding="3" border="2">
+  <tr>
+    <th>Emp Number</th>
+    <th>Emp Name</th>
+    <th>Emp Job</th>
+    <th>Emp Salary</th>
+    <th>Emp Deptno</th>
+  </tr>
+
+  <tr *ngFor="let item of empsArray">
+    <td>{{ item.empno }}</td>
+    <td>{{ item.ename | titlecase }}</td>
+    <td>{{ item.job | uppercase }}</td>
+    <td>{{ item.sal | currency }}</td>
+    <td>{{ item.deptno }}</td>
+  </tr>
+</table>
+
+<hr />
+
+<!--
+<p> {{empsArray[0] | json }} </p>
+-->
