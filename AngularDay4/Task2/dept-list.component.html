@@ -1,0 +1,72 @@
+<style>
+  .c1 {
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 150px;
+    padding: 5px;
+    text-align: center;
+    margin: 5px;
+
+    box-shadow: 5px 5px 2px black;
+  }
+  .bg1 {
+    background-color: rgb(54, 190, 235);
+  }
+</style>
+<!--
+<div
+  style="
+    text-align: center;
+    border: 1px solid black;
+    background-color: lightblue;
+  "
+></div>
+
+<div *ngFor="let deptObj of filteredArray" class="c1">
+  <h3 style="margin: 2px; color: Red">{{ deptObj.dname }}</h3>
+  <u> Deptno : {{ deptObj.deptno }} </u> <br />
+  Location : <span style="color: Green"> {{ deptObj.loc }} </span> <br />
+</div>
+
+<br />
+<div style="clear: left"></div>
+<hr />
+
+<div
+  style="
+    text-align: center;
+    border: 1px solid black;
+    background-color: lightpink;
+  "
+>
+  <ng-content select="[footer]"></ng-content>
+</div>
+-->
+<table
+  border="2"
+  cellspacing="0"
+  cellpadding="5"
+  width="500"
+  style="background-color: rgb(250, 249, 248)"
+>
+  <tr class="bg1">
+    <th>Department No.</th>
+    <th>Department Name</th>
+    <th>Location</th>
+  </tr>
+
+  <tr
+    *ngFor="
+      let item of deptsArray;
+      let i = index;
+      let isEven = even;
+      let isOdd = odd
+    "
+    [ngClass]="{ bg2: isEven, bg3: isOdd }"
+  >
+    <td>{{ item.deptno }}</td>
+    <td>{{ item.dname }}</td>
+
+    <td>{{ item.loc }}</td>
+  </tr>
+</table>
