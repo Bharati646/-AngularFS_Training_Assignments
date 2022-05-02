@@ -1,0 +1,32 @@
+<table
+  border="2"
+  cellspacing="0"
+  cellpadding="5"
+  width="500"
+  style="background-color: rgb(250, 250, 250)"
+  border="2"
+>
+  <thead>
+    <tr style="background-color: rgb(203, 203, 241)">
+      <th>Employee Number</th>
+      <th>Employee Name</th>
+      <th>Employee Job</th>
+      <th>Employee Salary</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let item of empArray">
+      <td>{{ item.empno }}</td>
+      <td>{{ item.ename }}</td>
+      <td>{{ item.job }}</td>
+      <td>{{ item.sal }}</td>
+    </tr>
+
+    <tr *ngIf="empArray.length == 0">
+      <td>
+        <h1>No employees available.</h1>
+      </td>
+    </tr>
+  </tbody>
+</table>
