@@ -1,0 +1,182 @@
+<hr />
+<br />
+
+<h3 style="text-align: center" class="heading"><b>TodoInput</b></h3>
+<table border="2px" width="100%" height="80px">
+  <br />
+
+  <div id="myDIV" class="header">
+    <input
+      class="addTask"
+      [(ngModel)]="todo"
+      id="myInput"
+      type="text"
+      width="1500px"
+      placeholder=" Please Add task"
+    />
+    <button (click)="addData_click()" class="mainButton">ADD TASK</button>
+  </div>
+</table>
+<br />
+<br />
+<h3 style="text-align: center" class="heading1"><b>ToDo List</b></h3>
+<table *ngFor="let item of todoArray" border="3px" width="100%" height="40px">
+  <tr
+    [ngClass]="item.isChecked ? 'strikethrough' : 'null'"
+    *ngIf="!item.isCheck"
+    style="border: 2px"
+  >
+    {{
+      item.task
+    }}
+  </tr>
+  <td style="border: 0px">
+    <div style="border: 0px" class="checkboxes">
+      <input
+        style="border: 0px"
+        type="checkbox"
+        *ngIf="!item.isCheck"
+        (click)="edit_click(item.id)"
+      />
+    </div>
+  </td>
+
+  <input
+    *ngIf="item.isCheck"
+    [(ngModel)]="item.task"
+    type="text"
+    style="text-decoration: line-through"
+    height="100%"
+    [(ngModel)]="item.task"
+  />
+
+  <td style="border: 0px">
+    <button
+      style="border: 0px"
+      class="button edit"
+      *ngIf="!item.isCheck"
+      (click)="edit_click(item.id)"
+    ></button>
+  </td>
+  <td style="border: 0px">
+    <button
+      style="border: 0px"
+      class="button addSave"
+      *ngIf="item.isCheck"
+      (click)="edit_click(item.id)"
+      href="javascript:void(0);"
+    ></button>
+  </td>
+  <td style="border: 0px">
+    <button
+      style="border: 0px"
+      class="button delete"
+      (click)="delete_click(item.id)"
+      href="javascript:void(0);"
+    ></button>
+  </td>
+</table>
+<br />
+
+<br />
+
+<style>
+  button {
+    display: inline-block;
+    background-color: #6688e7;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 10px;
+
+    padding: 20px;
+    width: 200px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .button1 {
+    width: 700px;
+    height: 10px;
+  }
+  .button2 {
+    width: 700px;
+    height: 10%;
+  }
+  .button3 {
+    background-color: rgb(108, 108, 233);
+    font-size: medium;
+    text-align: justify;
+    width: 1500px;
+    height: 10px;
+    text-align: center;
+  }
+  .checkboxes {
+    display: inline-block;
+    padding-right: 100px;
+    text-align: right;
+  }
+  .edit {
+    background: url(https://img.icons8.com/material-outlined/344/edit--v1.png);
+    background-size: 20px auto;
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 20px;
+    border: 0ch;
+  }
+  .addTask {
+    width: 1500px;
+    height: 30px;
+  }
+  .addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    width: 1500px;
+  }
+  .heading {
+    color: rgb(95, 20, 192);
+    font-size: xx-large;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  .heading1 {
+    color: rgb(108, 11, 236);
+    font-size: x-large;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  .addSave {
+    background: url(https://cdn-icons-png.flaticon.com/512/1828/1828640.png);
+    background-size: 20px auto;
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 50px;
+    border: 0ch;
+  }
+  .addBtn:hover {
+    background-color: #bbb;
+  }
+  .delete {
+    background: url(https://img.icons8.com/fluency/344/filled-trash.png);
+    background-size: 20px auto;
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 50px;
+    border: 0ch;
+  }
+  .mainButton {
+    width: 200px;
+    height: 40px;
+  }
+</style>
