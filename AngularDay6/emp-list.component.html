@@ -1,0 +1,87 @@
+<body>
+  <h1 class="heading" style="text-align: center">Employee Details</h1>
+  <hr />
+  <div class="div0" align="center">
+    <input
+      class="color"
+      type="text"
+      [(ngModel)]="ename"
+      placeholder="ename"
+      style="background-color: rgb(233, 233, 248)"
+    />
+    <input
+      class="color"
+      type="text"
+      [(ngModel)]="job"
+      placeholder="job"
+      style="background-color: rgb(233, 233, 248)"
+    />
+    <input
+      class="color"
+      type="text"
+      [(ngModel)]="sal"
+      placeholder="sal"
+      style="background-color: rgb(233, 233, 248)"
+    />
+    <input
+      class="color"
+      type="text"
+      [(ngModel)]="deptno"
+      placeholder="deptno"
+      style="background-color: rgb(233, 233, 248)"
+    />
+  </div>
+  <br /><br />
+  <div class="div1" align="center">
+    <input type="button" value="Get Employee" (click)="getData_click()" />
+    <input type="button" value="Add Employee" (click)="addData_click()" />
+    <input type="button" value="Update Employee" (click)="updateData_click()" />
+    <input type="button" value="Clear Fields" (click)="clearFields()" />
+  </div>
+  <br />
+  <br />
+  <table border="3px" style="color: black" class="centre">
+    <thead style="background-color: bisque">
+      <th>Emp Number</th>
+      <th>Emp Name</th>
+      <th>Emp Job</th>
+      <th>Emp Salary</th>
+      <th>Emp Deptno</th>
+      <th>Operation</th>
+    </thead>
+    <tr *ngFor="let item of empsArray">
+      <td>{{ item.id }}</td>
+      <td>{{ item.ename }}</td>
+      <td>{{ item.job }}</td>
+      <td>{{ item.sal }}</td>
+      <td>{{ item.deptno }}</td>
+      <td>
+        <a href="javascript:void(0);" (click)="selectData_click(item.id)"
+          >Select</a
+        >
+        |
+        <a href="javascript:void(0);" (click)="deleteData_click(item.id)"
+          >Delete</a
+        >
+      </td>
+    </tr>
+  </table>
+
+  <style>
+    .centre {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      background-color: rgb(239, 248, 248);
+      text-decoration: rgb(103, 103, 230);
+    }
+    .color {
+      background-color: rgb(236, 236, 248);
+      box-shadow: rgb(130, 130, 179);
+    }
+    .heading {
+      text-decoration: blue;
+      text-shadow: 0mm;
+    }
+  </style>
+</body>
