@@ -1,0 +1,53 @@
+{
+  "emp": [
+    {
+      "id": 1,
+      "ename": "Damon",
+      "job": "Manager",
+      "sal": 83000,
+      "deptno": 10
+    },
+    {
+      "id": 2,
+      "ename": "stafon",
+      "job": "Developer",
+      "sal": 90000,
+      "deptno": 20
+    },
+    {
+      "id": 3,
+      "ename": "Kathernine",
+      "job": "QA",
+      "sal": 93000,
+      "deptno": 40
+    },
+    {
+      "id": 4,
+      "ename": "Elena",
+      "job": "Team Lead",
+      "sal": 67000,
+      "deptno": 30
+    },
+    {
+      "id": 7,
+      "ename": "Calorine",
+      "job": "Manager",
+      "sal": "80000",
+      "deptno": 10
+    },
+    {
+      "id": 8,
+      "ename": "Klaus",
+      "job": "CEO",
+      "sal": 400000000,
+      "deptno": 50
+    },
+    {
+      "id": 9,
+      "ename": "ELIJAH",
+      "job": "MD",
+      "sal": "6000000",
+      "deptno": "60"
+    }
+  ]
+}
