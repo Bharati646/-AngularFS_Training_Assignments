@@ -1,0 +1,83 @@
+<body>
+  <h1 class="header" align="center">Employee Details By Operators</h1>
+  <div class="" align="center">
+    <button (click)="getEmployees()" class="button button2">
+      Get Employee
+    </button>
+    &nbsp;
+    <button (click)="getManager()" class="button button2">
+      Manager Works in Given Departemnt
+    </button>
+    <br />
+    <br />
+
+    <button (click)="getNameDesignation()" class="button button2">
+      Get Employee Name and Deisgnation</button
+    >&nbsp;
+    <button (click)="getEmployeeNotWorkinginDept10()" class="button button2">
+      Get Employee not working in department 10</button
+    >&nbsp;
+    <button (click)="getEmployeeBasedOnSalary()" class="button button2">
+      Get Sorted Employee based on salary
+    </button>
+  </div>
+  <br />
+  <br />
+  <br />
+  <table border="2px" class="tab1" width="60%">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Designation</th>
+      <th>Salary</th>
+      <th>deptno</th>
+    </tr>
+    <tr *ngFor="let item of result" style="border: 2px" class="color">
+      <td>{{ item.id }}</td>
+      <td>{{ item.ename }}</td>
+      <td>{{ item.job }}</td>
+      <td>{{ item.sal }}</td>
+      <td>{{ item.deptno }}</td>
+    </tr>
+  </table>
+  <br />
+  <br />
+  <style>
+    .tab1 {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      background-color: rgb(239, 248, 248);
+      text-decoration: rgb(103, 103, 230);
+    }
+    .color {
+      background-color: rgb(256, 256, 248);
+      box-shadow: rgb(130, 130, 179);
+    }
+    .button {
+      background-color: #1683b6; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+    }
+    .button2:hover {
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+    .header {
+      padding: 60px;
+      text-align: center;
+
+      color: rgb(91, 6, 117);
+      font-size: 30px;
+    }
+  </style>
+</body>
