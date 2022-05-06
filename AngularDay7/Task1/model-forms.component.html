@@ -1,0 +1,143 @@
+<style>
+  .error {
+    color: rgb(245, 6, 6);
+  }
+  .form1 {
+    background-color: #cdcde0;
+    border: #373b3d;
+  }
+  .button {
+    background-color: #1683b6;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+  }
+  .button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+  .header {
+    padding: 10px;
+
+    color: rgb(91, 6, 117);
+    font-size: 20px;
+  }
+</style>
+
+<h3 class="header">Angular Form Validations using Model Driven</h3>
+<hr />
+
+<form [formGroup]="customerForm" (submit)="submit_click()" class="form1">
+  <fieldset>
+    <legend>Customer Registration Form</legend>
+
+    Owner Name:
+    <input type="text" formControlName="fname" />
+    <span
+      *ngIf="
+        customerForm.controls['fname'].invalid &&
+        customerForm.controls['fname'].dirty
+      "
+      class="error"
+      >First Name is required</span
+    >
+
+    <br /><br />
+    Contact Number:
+    <input type="text" formControlName="phone" />
+    <span
+      *ngIf="
+        customerForm.controls['phone'].invalid &&
+        customerForm.controls['phone'].dirty
+      "
+      class="error"
+      >Contact Number must contain 10 digits</span
+    >
+    <br /><br />
+    Owner E-mail :
+    <input formControlName="email" />
+    <span
+      class="error"
+      *ngIf="
+        customerForm.controls['email'].invalid &&
+        customerForm.controls['email'].dirty
+      "
+    >
+      Enter proper e-mail id
+    </span>
+    <br />
+    <br />
+    Vehicle Registration Number :
+    <input formControlName="regNo" />
+    <span
+      class="error"
+      *ngIf="
+        customerForm.controls['regNo'].invalid &&
+        customerForm.controls['regNo'].dirty
+      "
+    >
+      Enter Correct Registration Number
+    </span>
+    <br />
+    <br />
+    Address : <input formControlName="address" />
+    <span
+      class="error"
+      *ngIf="
+        customerForm.controls['address'].invalid &&
+        customerForm.controls['address'].dirty
+      "
+    >
+      Address Required
+    </span>
+    <br /><br />
+
+    Model :
+    <input formControlName="model" />
+    <span
+      class="error"
+      *ngIf="
+        customerForm.controls['model'].invalid &&
+        customerForm.controls['model'].dirty
+      "
+    >
+      Model should have 10 characters.
+    </span>
+    <br /><br />
+    Color:
+    <input formControlName="colors" />
+    <span
+      class="error"
+      *ngIf="
+        customerForm.controls['colors'].invalid &&
+        customerForm.controls['colors'].dirty
+      "
+    >
+      Color Required
+    </span>
+    <br /><br />
+    Year:
+    <input formControlName="year" />
+    <span
+      class="error"
+      *ngIf="
+        customerForm.controls['year'].invalid &&
+        customerForm.controls['year'].dirty
+      "
+    >
+      Enter Proper Year
+    </span>
+    <br /><br />
+    <button class="button button2" [disabled]="customerForm.invalid">
+      Register
+    </button>
+  </fieldset>
+</form>
