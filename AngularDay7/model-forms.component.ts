@@ -38,7 +38,7 @@ export class ModelFormsComponent implements OnInit {
 
   public submit_click(): void {
     // ajax call to send data to server
-    alert('Customer Details are registered.');
+    alert('Vehicle Details are registered.');
     let customerObj = this.customerForm.value;
     console.log(customerObj);
   }
