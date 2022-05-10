@@ -1,0 +1,26 @@
+<h1>Mobile Details</h1>
+<hr />
+<style>
+  .c1 {
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 150px;
+    padding: 5px;
+    text-align: center;
+    margin: 5px;
+    float: left;
+    box-shadow: 5px 5px 2px rgb(25, 3, 87);
+  }
+</style>
+
+<hr />
+
+<div *ngFor="let item of productArr" class="c1">
+  <h4>
+    <b> Mobile Id :{{ item.pid }}</b>
+  </h4>
+  <p>Mobile Name : {{ item.pname }}</p>
+  <p>Mobile Price :{{ item.price }}</p>
+  <p>Category: {{ item.category }}</p>
+  <p>Mobile Quantity :{{ item.qty }}</p>
+</div>
