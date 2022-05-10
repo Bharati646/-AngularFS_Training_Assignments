@@ -1,0 +1,22 @@
+<hr />
+<br />
+<div class="color">
+  <fieldset>
+    <legend>User Login</legend>
+
+    User Id : <input type="text" [(ngModel)]="uid" /> <br /><br />
+
+    Password : <input type="password" [(ngModel)]="pwd" /> <br /><br />
+
+    <button (click)="login_click()">Login</button>
+    <p>{{ result }}</p>
+  </fieldset>
+</div>
+
+<style>
+  .color {
+    color: rgb(16, 16, 43);
+    background-color: rgb(229, 240, 198);
+    height: 50%;
+  }
+</style>
